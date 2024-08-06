@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style1.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/postprocessing.min.js"></script>-->
+    <title>Title</title>
+</head>
+<body>
+    <canvas id="starCanvas"></canvas> 
+    <div class="current">      
+        <p class="date"></p>
+        <select name="gradovi" id="gradovi">
+            <option>Belgrade</option>
+            <option>Podgorica</option>
+            <option>Budapest</option>
+            <option>Sarajevo</option>
+            <option>Split</option>
+            <option>London</option>
+            <option>Brasilia</option>
+        </select>
+        <p class="currentTemp"></p>
+        <div class="description"></div>
+        <div class="temperature">
+            <p class="tMin"></p>
+            <p class="tMax"></p>
+        </div>
+    </div>
+    <div class="hourly">
+        <div class="h2">
+            <p class="sati">Hourly Forecast</p>
+            <p class="dani">Weekly Forecast</p>
+        </div>
+        <div id="prognoza">
+            <div class="poSatima" id="sat0"></div>
+            <div class="poSatima" id="sat1"></div>
+            <div class="poSatima" id="sat2"></div>
+            <div class="poSatima" id="sat3"></div>
+            <div class="poSatima" id="sat4"></div>
+        </div>
+    </div>
+</div>
+<div id="canvas-stranica1"></div>
+<script src="jquery.min.js"></script>
+<script src="script1.js"></script>
+</body>
+</html>

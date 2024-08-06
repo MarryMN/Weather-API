@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+#canvas-stranica2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    background-image: url("http://127.0.0.1:5500/Images/kucica1Dan.jpg");
+    background-size: cover;
+    min-width: 300px;
+    max-width: 1920px;
+}
+
+.toPage1 {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+}
+
+.datas {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 5%;
+    gap: 40px;
+}
+
+.trenutnaTemp0,
+.trenutnaTemp1,
+.trenutnaTemp2 {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 30px;
+    align-items: center;
+    width: 80vw;
+    /*360px;*/
+    height: 25vh;
+    /*150px;*/
+    border: white 1px solid;
+    border-radius: 200px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    font-size: 1.5em;
+    background-image: linear-gradient(rgb(27, 75, 98), rgba(39, 112, 210, 0.3));
+    box-shadow: 12px 12px 6px rgb(0 0 0 / 30%);
+}
+
+img {
+    position: absolute;
+    width: 40%;
+    top: 0%;
+    left: 60%;
+}
+
+.currentTemp0,
+.currentTemp1,
+.currentTemp2 {
+    display: flex;
+    font-size: 40px;
+}
+
+.temperature {
+    display: flex;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+@media screen and (max-width: 400px) {
+    .datas {
+        gap: 8vh;
+    }
+
+    .trenutnaTemp0,
+    .trenutnaTemp1,
+    .trenutnaTemp2 {
+        width: 280px;
+
+        padding-right: 5px;
+        font-size: 0.9em;
+    }
+
+    img {
+        position: absolute;
+        width: 45%;
+        top: 10%;
+        right: 40%;
+    }
+}
+
+@media screen and (min-width:800px) and (max-width: 1080px) {
+    .datas {
+        gap: 6vh;
+    }
+
+    .trenutnaTemp0,
+    .trenutnaTemp1,
+    .trenutnaTemp2 {
+        /* height: 180px;
+        width: 400px;*/
+        width: 60vw;
+        height: 26vh;
+        font-size: 1.5em;
+    }
+
+    .trenutnaTemp0,
+    .trenutnaTemp2 {
+        left: -150px;
+    }
+
+    .trenutnaTemp1 {
+        left: 150px;
+    }
+
+    img {
+        width: 40%;
+        /* height: 150px; */
+        right: 5%;
+    }
+}
+
+@media screen and (min-width:1080px) and (max-width: 1920px) {
+    .datas {
+        gap: 10px;
+    }
+
+    .trenutnaTemp0,
+    .trenutnaTemp1,
+    .trenutnaTemp2 {
+
+        width: 50vw;/*450px;*/
+        height: 29vh;/*180px;*/
+        font-size: 1.4em;
+    }
+
+    .trenutnaTemp0,
+    .trenutnaTemp2 {
+        left: 250px;
+    }
+
+    .trenutnaTemp1 {
+        left: -250px;
+    }
+
+    img {
+        width:35%; /*180px;*/
+        /*height: 180px;*/
+        right: 7%;
+    }
+}
