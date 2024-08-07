@@ -13,7 +13,6 @@ $(document).ready(function () {
                 },
                 success: function (response) {
                     var is_day = response.current.is_day;
-                 
                     var iconPath1 = is_day == 0 ? "http://127.0.0.1:5500/Images/kucica1.png" : "http://127.0.0.1:5500/Images/kucica1Dan.jpg";
                     var code = response.current.condition.code;
                     var iconPath;

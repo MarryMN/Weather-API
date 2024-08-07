@@ -16,7 +16,7 @@ $(document).ready(function () {
 
             success: function (response) {
                 var is_day = response.current.is_day;
-                
+                is_day=1
                 if (is_day == 0) {
                     var iconPath1 = "http://127.0.0.1:5500/Images/kucica.png";
                 }
@@ -429,7 +429,7 @@ $(document).ready(function () {
 
 
                 function visualizePartlyCloudy(response) {
-                    var condition = response.current.condition.text.toLowerCase();                 
+                    var condition = response.current.condition.text.toLowerCase();               
                     if (!condition.includes("partly cloudy")) {
                         return;
                     }
