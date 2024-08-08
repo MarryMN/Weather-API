@@ -13,27 +13,27 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     background-image: url("http://127.0.0.1:5500/Images/kucica.png");
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
     z-index: -1;
 }
 
-canvas{   
-   display: block;
-   position: absolute;
-   width: 100%;
-   height: 100vh; 
-   overflow: hidden;
+canvas {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .current {
     position: relative;
     display: flex;
     flex-direction: column;
-    top: 10%;   
+    top: 10%;
     height: 50vh;
     align-items: center;
     justify-content: center;
@@ -42,9 +42,9 @@ canvas{
     gap: 8px;
     text-align: center;
     text-shadow: -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
 #gradovi {
@@ -55,17 +55,17 @@ canvas{
     justify-content: center;
     align-items: center;
     font-size: 40px;
-    cursor: pointer;   
+    cursor: pointer;
     text-shadow: -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
 
 .currentTemp {
     font-size: 60px;
-    margin-bottom: 10px;  
+    margin-bottom: 10px;
 }
 
 .description {
@@ -88,7 +88,7 @@ canvas{
 }
 
 .hourly {
-    position:absolute;
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -97,10 +97,10 @@ canvas{
     width: 100%;
     height: 35vh;
     background-color: rgba(255, 255, 255, 0.5);
-    border: rgba(255, 255, 255, 0.5) 2px solid;   
+    border: rgba(255, 255, 255, 0.5) 2px solid;
     color: rgba(0, 0, 0, 0.5);
     bottom: 0;
-    cursor:pointer ;
+    cursor: pointer;
 
 }
 
@@ -136,7 +136,7 @@ canvas{
     align-items: center;
     font-size: 18px;
     color: rgba(255, 255, 255);
-    background-image: linear-gradient(rgb(27, 75, 98), rgba(39, 112, 210, 0.3));  
+    background-image: linear-gradient(rgb(27, 75, 98), rgba(39, 112, 210, 0.3));
     gap: 2px;
     box-shadow: 12px 6px 6px rgb(0 0 0 / 60%);
     cursor: pointer;
@@ -144,7 +144,5 @@ canvas{
 }
 
 #sat0 {
-    background-image: linear-gradient(rgb(9, 30, 41), rgba(18, 50, 93, 0.3));  
+    background-image: linear-gradient(rgb(9, 30, 41), rgba(18, 50, 93, 0.3));
 }
-
-

@@ -53,9 +53,7 @@ a {
     padding-left: 4em;
     align-items: center;
     width: 80vw;
-    /*360px;*/
-    height: 25vh;
-    /*150px;*/
+    height: 25vh;   
     border: white 1px solid;
     border-radius: 200px;
     background-color: rgba(255, 255, 255, 0.5);
@@ -116,11 +114,8 @@ img {
 
     .trenutnaTemp0,
     .trenutnaTemp1,
-    .trenutnaTemp2 {
-        /* height: 180px;
-        width: 400px;*/
-        width: 60vw;
-       /* height: 26vh;*/
+    .trenutnaTemp2 {    
+        width: 60vw;  
         font-size: 1.5em;
     }
 
@@ -134,8 +129,7 @@ img {
     }
 
     img {
-        width: 35%;
-        /* height: 150px; */
+        width: 35%;    
         right: 5%;
     }
 }
@@ -148,9 +142,8 @@ img {
     .trenutnaTemp0,
     .trenutnaTemp1,
     .trenutnaTemp2 {
-
-        width: 55vw;/*450px;*/
-        height: 26vh;/*180px;*/
+        width: 55vw; 
+        height: 26vh;    
         font-size: 1.4em;
     }
 
@@ -164,8 +157,7 @@ img {
     }
 
     img {
-        width:30%; /*180px;*/
-        /*height: 180px;*/
+        width: 30%;       
         right: 7%;
     }
 }

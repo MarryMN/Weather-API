@@ -12,10 +12,17 @@ $(document).ready(function () {
                     aqi: "yes",
                 },
                 success: function (response) {
-                    var is_day = response.current.is_day;
-                    var iconPath1 = is_day == 0 ? "http://127.0.0.1:5500/Images/kucica1.png" : "http://127.0.0.1:5500/Images/kucica1Dan.jpg";
-                    var code = response.current.condition.code;
+                    var is_day = response.current.is_day;                
                     var iconPath;
+
+                    if (is_day == 0) {
+                    var iconPath1 = "http://127.0.0.1:5500/Images/kucica1.png";
+                }
+                    else {
+                    var iconPath1 = "http://127.0.0.1:5500/Images/kucica1Dan.jpeg";
+                }
+                    var code = response.current.condition.code;
+                    
 
                     if (code == 1000 && is_day == 0) {
                         iconPath = "Images/vedro.png";
@@ -29,8 +36,8 @@ $(document).ready(function () {
                         iconPath = "Images/oblacno.png";
                     } else if (code == 1063) {
                         iconPath = "Images/mestimicnoKisaUBlizini.png";
-                    }         
-                  
+                    }
+
 
                     $(".img" + i).append('<img src="' + iconPath + '"/>');
                     $(".currentTemp" + i).append(Math.round(response.current.temp_c) + " °C" + "<br>");
@@ -55,21 +62,18 @@ $(document).ready(function () {
         var renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.getElementById('canvas-stranica2').appendChild(renderer.domElement);
-
-        // Background texture
+      
         var textureLoader = new THREE.TextureLoader();
         textureLoader.load(backgroundImage, function (texture) {
             scene.background = texture;
         });
 
-        // Light
         var ambientLight = new THREE.AmbientLight(0x404040);
         scene.add(ambientLight);
         var pointLight = new THREE.PointLight(0xffffff, 1.5, 100);
         pointLight.position.set(0, 5, 5);
         scene.add(pointLight);
 
-        // Cloud textures
         var cloudTexture1 = new THREE.TextureLoader().load('http://127.0.0.1:5500/Images/cloud3.png');
         var cloudTexture2 = new THREE.TextureLoader().load('http://127.0.0.1:5500/Images/cloud4.png');
         var cloudMaterials = [
@@ -99,15 +103,11 @@ $(document).ready(function () {
             clouds.push(cloud);
             scene.add(cloud);
         }
-
-        // Camera position
         camera.position.z = 5;
 
-        // Animation function
         function animate() {
             requestAnimationFrame(animate);
 
-            // Move clouds
             clouds.forEach(function (cloud) {
                 cloud.position.add(cloud.userData.velocity);
                 if (cloud.position.x > 5) cloud.position.x = -5;
@@ -122,14 +122,9 @@ $(document).ready(function () {
         }
         animate();
 
-        // Handle window resize
-        window.addEventListener('resize', function () {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
+        window.addEventListener('resize', onWindowResize(camera));
+     
     }
-
 
     function dayDandelion(backgroundImage) {
         var scene = new THREE.Scene();
@@ -138,20 +133,19 @@ $(document).ready(function () {
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.getElementById('canvas-stranica2').appendChild(renderer.domElement);
 
-        // Background texture
         var textureLoader = new THREE.TextureLoader();
         textureLoader.load(backgroundImage, function (texture) {
             scene.background = texture;
         });
 
-        // Light
+
         var ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
         scene.add(ambientLight);
         var pointLight = new THREE.PointLight(0xffffff, 1.5, 100);
         pointLight.position.set(0, 5, 5);
         scene.add(pointLight);
 
-        // Dandelions
+
         var dandelionTexture = new THREE.TextureLoader().load('http://127.0.0.1:5500/Images/maslacak1.png');
         var dandelionMaterial = new THREE.SpriteMaterial({ map: dandelionTexture, transparent: true });
         var dandelions = [];
@@ -175,14 +169,11 @@ $(document).ready(function () {
             scene.add(dandelion);
         }
 
-        // Camera position
         camera.position.z = 5;
 
-        // Animation function
         function animate() {
             requestAnimationFrame(animate);
 
-            // Move dandelions
             dandelions.forEach(function (dandelion) {
                 dandelion.position.add(dandelion.userData.velocity);
                 if (dandelion.position.x > 10) dandelion.position.x = -10;
@@ -197,11 +188,15 @@ $(document).ready(function () {
         }
         animate();
 
-        // Handle window resize
-        window.addEventListener('resize', function () {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
+        window.addEventListener('resize', onWindowResize(camera));
+  
     }
 });
+
+function onWindowResize(camera) {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    var renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+}
