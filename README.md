@@ -1,9 +1,9 @@
 # **Weather-API**
 
-- HTML
-- CSS
 - JavaScript
 - Three.js
+- HTML
+- CSS
 
 - Watch on our youtube channel: https://youtube.com/shorts/BRywcxfjz7c?si=p8o5y5_mkdAt49Nt
 
